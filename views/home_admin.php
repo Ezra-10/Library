@@ -24,7 +24,7 @@
             <div class="bg-white p-8 shadow-md rounded-md">
                 <h2 class="text-xl font-semibold mb-4">Book Management</h2>
                 <p>View and manage the book collection in the library.</p>
-                <a href="/admin/books" class="block mt-4 text-blue-600">Manage Books</a>
+                <a href="/book/add" class="block mt-4 text-blue-600">Manage Books</a>
             </div>
 
             <div class="bg-white p-8 shadow-md rounded-md">

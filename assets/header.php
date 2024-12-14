@@ -18,7 +18,8 @@
 
                 <?php if ($_SESSION['role'] === 'admin'): ?>
                     <li><a href="/admin/users" class="hover:text-blue-600">Manage Users</a></li>
-                    <li><a href="/admin/books" class="hover:text-blue-600">Manage Books</a></li>
+                    <li><a href="/book/add" class="hover:text-blue-600">Manage Books</a></li>
+                    <li><a href="/admin/loans" class="hover:text-blue-600">Member Loans</a></li>
                 <?php else: ?>
                     <li><a href="/catalog" class="hover:text-blue-600">Catalog</a></li>
                     <li><a href="/borrowed" class="hover:text-blue-600">My Borrowed Books</a></li>

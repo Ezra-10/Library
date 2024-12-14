@@ -102,6 +102,13 @@ switch ($uri) {
         $controller->returnBook($loan_id);
         break;
 
+    case '/admin/loans':
+        require 'controllers/AdminController.php';
+        $controller = new AdminController($db);
+        $controller->viewMemberLoans();
+        break;
+
+
     case '/return':
         require 'controllers/ReturnController.php';
         $controller = new ReturnController($db);
@@ -129,6 +136,21 @@ switch ($uri) {
         $controller = new UploadController($db);
         $controller->addBook();
         break;
+
+
+ 
+case '/admin/fines':
+    require 'controllers/AdminController.php';
+    $controller = new AdminController($db);
+    $controller->viewMemberFines();
+    break;
+
+
+case '/admin/pay-fine':
+    require 'controllers/AdminController.php';
+    $controller = new AdminController($db);
+    $controller->payFine();
+    break;
 
 
 
