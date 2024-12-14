@@ -5,10 +5,10 @@
     die('Direct access not permitted');
 }
 require "assets/header.php";
-// Koneksi ke database ?>
+ ?>
 
 
-    <!-- Search Bar Section -->
+
     <section class="py-10">
         <div class="container mx-auto text-center">
             <form action="" method="GET" class="mb-8">
@@ -40,11 +40,11 @@ require "assets/header.php";
             <?php endforeach ?>
         </table>
     </div>
-    <!-- Placeholder for Book List -->
+   
     <section class="py-20">
         <div class="container mx-auto text-center">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-                <!-- Book Card Template (Placeholder) -->
+       
                 <div class="bg-white p-8 shadow-md rounded-md">
                     <img src="photo/otak.jpeg" alt="Book Cover" class="mx-auto mb-4">
                     <div class="p-4">

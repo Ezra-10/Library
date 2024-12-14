@@ -1,13 +1,13 @@
 <?php require 'assets/header.php';?>
 
-    <!-- Book List Section -->
+    
     <section class="py-20">
         <div class="container mx-auto">
             <h1 class="text-4xl font-bold text-gray-800 mb-10 text-center">Pilih Buku</h1>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10">
                 <?php
-                // Array dummy data buku
+            
                 $books = [
                     ['title' => 'Black Clover', 'author' => 'Yuuki Tabata', 'cover' => 'photo/BC.jpg', 'id' => 1],
                     ['title' => 'One Piece', 'author' => '', 'cover' => 'photo/One.jpg', 'id' => 2],
@@ -17,10 +17,10 @@
                     ['title' => 'Book Five', 'author' => 'Author Five', 'cover' => 'https://via.placeholder.com/200x300', 'id' => 6],
                     ['title' => 'Book Five', 'author' => 'Author Five', 'cover' => 'https://via.placeholder.com/200x300', 'id' => 7],
                     ['title' => 'Book Five', 'author' => 'Author Five', 'cover' => 'https://via.placeholder.com/200x300', 'id' => 8],
-                    // Tambah lebih banyak data buku di sini
+                   
                 ];
 
-                // Menampilkan buku dalam kartu
+             
                 foreach ($books as $book) {
                     echo "
                     <div class='bg-white rounded-lg shadow-md overflow-hidden'>

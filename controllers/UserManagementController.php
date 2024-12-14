@@ -14,7 +14,7 @@ class UserManagementController
 
     public function index()
     {
-        // Menampilkan daftar semua user
+       
         $sql = "SELECT id, username, email, role, created_at FROM user";
         $stmt = $this->db->query($sql);
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);

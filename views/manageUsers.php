@@ -15,7 +15,7 @@
 
     <h1 class="text-3xl font-bold text-center mt-10">Manage Users</h1>
 
-    <!-- Pesan notifikasi -->
+ 
     <?php if (!empty($_SESSION['success'])): ?>
         <div class="bg-green-500 text-white p-3 text-center my-4">
             <?= $_SESSION['success'];
@@ -24,7 +24,7 @@
     <?php endif; ?>
 
     <div class="container mx-auto mt-10">
-        <!-- Daftar User -->
+   
         <table class="min-w-full bg-white border-collapse border border-gray-200">
             <thead>
                 <tr>
@@ -48,7 +48,7 @@
             </tbody>
         </table>
 
-        <!-- Form Tambah User -->
+    
         <h2 class="text-2xl font-bold mt-10">Add New User</h2>
         <form action="/admin/users/create" method="POST" class="mt-6 space-y-4">
             <input type="text" name="username" placeholder="Username" class="w-full p-3 border rounded">

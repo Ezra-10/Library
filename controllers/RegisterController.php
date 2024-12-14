@@ -4,13 +4,13 @@ session_start();
 class RegisterController {
 
     public function index($db) {
-        // Cek apakah user login dan memiliki role admin
+      
         if (!isset($_SESSION['user_id']) || $_SESSION['role'] !== 'admin') {
             header('Location: /login');
             exit();
         }
 
-        // Proses form register
+      
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $username = trim($_POST['username']);
             $email = trim($_POST['email']);

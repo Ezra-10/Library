@@ -8,13 +8,13 @@
 </head>
 <body class="bg-gray-100">
 
-    <!-- Header -->
+  
     <?php require 'assets/header.php'; ?>
 
     <div class="container mx-auto mt-10">
         <h1 class="text-4xl font-bold text-center mb-10">Tambah Buku Baru</h1>
 
-        <!-- Pesan Sukses -->
+
         <?php if (isset($_SESSION['success'])): ?>
             <div class="bg-green-500 text-white p-4 rounded-md mb-4">
                 <?= $_SESSION['success']; ?>
@@ -22,7 +22,7 @@
             <?php unset($_SESSION['success']); ?>
         <?php endif; ?>
 
-        <!-- Pesan Kesalahan -->
+       
         <?php if (isset($_SESSION['error'])): ?>
             <div class="bg-red-500 text-white p-4 rounded-md mb-4">
                 <?= $_SESSION['error']; ?>
@@ -31,7 +31,7 @@
         <?php endif; ?>
 
         <form action="/upload/addBook" method="POST" enctype="multipart/form-data" class="bg-white p-8 rounded-md shadow-md">
-            <!-- Input Judul Buku -->
+        
             <div class="mb-6">
                 <label for="title" class="block text-gray-700 font-bold mb-2">Judul Buku</label>
                 <input 
@@ -44,7 +44,7 @@
                 >
             </div>
 
-            <!-- Input Penulis Buku -->
+           
             <div class="mb-6">
                 <label for="author" class="block text-gray-700 font-bold mb-2">Penulis</label>
                 <input 
@@ -57,7 +57,7 @@
                 >
             </div>
 
-            <!-- Upload Gambar -->
+          
             <div class="mb-6">
                 <label for="image" class="block text-gray-700 font-bold mb-2">Gambar Buku</label>
                 <input 
@@ -70,7 +70,7 @@
                 >
             </div>
 
-            <!-- Tombol Submit -->
+           
             <div class="flex justify-end">
                 <button 
                     type="submit" 

@@ -20,7 +20,7 @@ class UploadController {
             $title = $_POST['title'];
             $author = $_POST['author'];
 
-            // 📂 3️⃣ Proses upload gambar
+            
             $image = $_FILES['image']['name'];
             $targetDir = 'uploads/';
             $targetFile = $targetDir . basename($image);

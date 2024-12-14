@@ -9,9 +9,7 @@ class AdminController
         $this->db = $db;
     }
 
-    /**
-     * Halaman utama Admin Dashboard
-     */
+   
     public function index()
     {
         require 'views/admin/dashboard.php';
@@ -22,14 +20,14 @@ class AdminController
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $peminjamanId = $_POST['peminjaman_id'];
 
-        // Validasi peminjaman ID
+    
         if (empty($peminjamanId)) {
             $_SESSION['error'] = 'ID Peminjaman tidak valid.';
             header('Location: /admin/fines');
             exit();
         }
 
-        // Perbarui status pembayaran
+     
         $sql = "UPDATE denda SET status_pembayaran = 'lunas' WHERE peminjaman_id = :peminjaman_id";
         $stmt = $this->db->prepare($sql);
         $stmt->bindParam(':peminjaman_id', $peminjamanId);
@@ -41,12 +39,11 @@ class AdminController
     }
 }
 
-    /**
-     * Halaman pengelolaan pengguna
-     */
+    
+     
     public function manageUsers()
     {
-        // Menampilkan daftar semua user
+      
         $sql = "SELECT id, username, email, role, created_at FROM user";
         $stmt = $this->db->query($sql);
         $users = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -54,9 +51,7 @@ class AdminController
         require 'views/admin/users.php';
     }
 
-    /**
-     * Membuat pengguna baru
-     */
+   
     public function createUser()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -65,7 +60,6 @@ class AdminController
             $password = password_hash($_POST['password'], PASSWORD_BCRYPT);
             $role = trim($_POST['role']);
 
-            // Validasi input
             if (empty($username) || empty($email) || empty($password) || empty($role)) {
                 $_SESSION['error'] = 'Semua kolom harus diisi!';
                 header('Location: /admin/users');
@@ -85,18 +79,13 @@ class AdminController
         }
     }
 
-    /**
-     * Halaman pengelolaan buku
-     */
+    
     public function manageBooks()
     {
-        // Logika untuk pengelolaan buku
+     
         require 'views/admin/books.php';
     }
 
-    /**
-     * Halaman pengelolaan pinjaman buku
-     */
     public function manageLoans()
     {
         $sql = "
@@ -122,9 +111,6 @@ class AdminController
         require 'views/admin_member.php';
     }
 
-    /**
-     * Halaman daftar member yang sedang meminjam buku
-     */
     public function viewMemberLoans()
     {
         $sql = "
@@ -148,9 +134,7 @@ class AdminController
         require 'views/member_loans.php';
     }
 
-    /**
-     * Halaman daftar member dengan denda
-     */
+    
     public function viewMemberFines()
     {
         $sql = "

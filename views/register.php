@@ -12,14 +12,14 @@
     <div class="bg-white p-8 rounded shadow-md w-96">
         <h2 class="text-2xl font-bold mb-6 text-center">Register User</h2>
 
-        <!-- Notifikasi jika ada error -->
+     
         <?php if (!empty($_SESSION['error'])): ?>
             <div class="bg-red-500 text-white p-3 mb-4 text-center">
                 <?= $_SESSION['error']; unset($_SESSION['error']); ?>
             </div>
         <?php endif; ?>
 
-        <!-- Notifikasi jika sukses -->
+        
         <?php if (!empty($_SESSION['success'])): ?>
             <div class="bg-green-500 text-white p-3 mb-4 text-center">
                 <?= $_SESSION['success']; unset($_SESSION['success']); ?>

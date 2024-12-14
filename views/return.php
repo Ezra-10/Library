@@ -8,15 +8,15 @@
 </head>
 <body class="bg-gray-100">
 
-    <!-- Include Header -->
+    
     <?php require 'assets/header.php'; ?>
 
-    <!-- Header -->
+ 
     <header class="bg-blue-600 text-white text-center py-6">
         <h1 class="text-3xl font-bold">Pengembalian Buku</h1>
     </header>
 
-    <!-- Alert Success -->
+    <
     <?php if (!empty($_SESSION['success'])): ?>
         <div class="max-w-3xl mx-auto mt-6">
             <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
@@ -27,7 +27,7 @@
         </div>
     <?php endif; ?>
 
-    <!-- Alert Denda -->
+    
     <?php if (!empty($_SESSION['fine'])): ?>
         <div class="max-w-3xl mx-auto mt-6">
             <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
@@ -38,7 +38,7 @@
         </div>
     <?php endif; ?>
 
-    <!-- Alert Error -->
+   
     <?php if (!empty($_SESSION['error'])): ?>
         <div class="max-w-3xl mx-auto mt-6">
             <div class="bg-yellow-100 border border-yellow-400 text-yellow-700 px-4 py-3 rounded relative" role="alert">
@@ -49,7 +49,6 @@
         </div>
     <?php endif; ?>
 
-    <!-- List Buku yang Dipinjam -->
     <div class="max-w-4xl mx-auto mt-10">
         <?php if (!empty($borrowings)): ?>
             <ul class="space-y-4">

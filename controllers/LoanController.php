@@ -21,9 +21,7 @@ class LoanController
         $this->db = $db;
     }
 
-    /**
-     * Menampilkan halaman peminjaman buku
-     */
+   
     public function index()
     {
         $sql = "SELECT books.id, books.title, books.author FROM books";
@@ -32,15 +30,13 @@ class LoanController
         require 'views/loan.php';
     }
 
-    /**
-     * Proses peminjaman buku
-     */
+  
     public function borrow()
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $user_id = $_SESSION['user_id']; 
             $book_id = $_POST['book_id']; 
-            $duration = isset($_POST['duration']) ? (int)$_POST['duration'] : 7; // Durasi diambil dari input user atau default 7 hari
+            $duration = isset($_POST['duration']) ? (int)$_POST['duration'] : 7; 
             
             if ($duration < 1) {
                 $duration = 1; // Minimal 1 hari
@@ -49,7 +45,7 @@ class LoanController
             }
 
             $borrow_date = date('Y-m-d');
-            $due_date = date('Y-m-d', strtotime("+$duration days")); // Jatuh tempo sesuai durasi dari user
+            $due_date = date('Y-m-d', strtotime("+$duration days")); 
 
             try {
                 $sql = "INSERT INTO loans (user_id, book_id, borrow_date, due_date) 
@@ -71,7 +67,7 @@ class LoanController
         }
     }
 
-    // Proses pengembalian buku
+    
     public function returnBook($loan_id)
     {
         try {
@@ -84,7 +80,7 @@ class LoanController
             $loan = $stmt->fetch(PDO::FETCH_ASSOC);
             
             $late_days = (strtotime($return_date) - strtotime($loan['due_date'])) / (60 * 60 * 24);
-            $fine = $late_days > 0 ? $late_days * 5000 : 0; // Denda 5000 per hari jika telat
+            $fine = $late_days > 0 ? $late_days * 10000 : 0; 
             $status = $fine > 0 ? 'late' : 'returned';
             
             $sql = "UPDATE loans 
