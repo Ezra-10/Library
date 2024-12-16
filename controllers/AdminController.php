@@ -145,12 +145,14 @@ class AdminController
                 user u 
             LEFT JOIN 
                 denda d ON d.peminjaman_id IN (SELECT id FROM loans WHERE loans.user_id = u.id) 
+                AND d.status_pembayaran = 'belum lunas' -- Hanya hitung denda yang belum lunas
             GROUP BY 
                 u.id, u.username
         ";
         $stmt = $this->db->query($sql);
         $fines = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    
         require 'views/admin_member.php';
     }
+    
 }

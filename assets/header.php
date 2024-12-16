@@ -21,7 +21,7 @@
                     <li><a href="/book/add" class="hover:text-blue-600">Manage Books</a></li>
                     <li><a href="/admin/loans" class="hover:text-blue-600">Member Loans</a></li>
                 <?php else: ?>
-                    <li><a href="/catalog" class="hover:text-blue-600">Catalog</a></li>
+                    <li><a href="/user/fines" class="hover:text-blue-600">Fines</a></li>
                     <li><a href="/borrowed" class="hover:text-blue-600">My Borrowed Books</a></li>
                     <li><a href="/loan" class="hover:text-blue-600">Loan</a></li>
                     <li><a href="/return" class="hover:text-blue-600">Return</a></li>

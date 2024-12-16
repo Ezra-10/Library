@@ -109,15 +109,12 @@ switch ($uri) {
         break;
 
 
-    case '/return':
+    case '/return';
         require 'controllers/ReturnController.php';
         $controller = new ReturnController($db);
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            $controller->returnBook($_POST['loan_id']);
-        } else {
-            $controller->index();
-        }
+        $controller->index();
         break;
+
 
     case '/return/returnBook':
         require 'controllers/ReturnController.php';
@@ -138,19 +135,31 @@ switch ($uri) {
         break;
 
 
- 
-case '/admin/fines':
-    require 'controllers/AdminController.php';
-    $controller = new AdminController($db);
-    $controller->viewMemberFines();
-    break;
+
+    case '/admin/fines':
+        require 'controllers/AdminController.php';
+        $controller = new AdminController($db);
+        $controller->viewMemberFines();
+        break;
 
 
-case '/admin/pay-fine':
-    require 'controllers/AdminController.php';
-    $controller = new AdminController($db);
-    $controller->payFine();
-    break;
+    case '/admin/pay-fine':
+        require 'controllers/AdminController.php';
+        $controller = new AdminController($db);
+        $controller->payFine();
+        break;
+
+    case '/user/fines':
+        require 'controllers/UserController.php';
+        $controller = new UserController($db);
+        $controller->viewFines();
+        break;
+
+    case '/user/pay-fine':
+        require 'controllers/UserController.php';
+        $controller = new UserController($db);
+        $controller->payFine();
+        break;
 
 
 
