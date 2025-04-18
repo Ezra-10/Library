@@ -58,7 +58,7 @@
                 <option value="member">Member</option>
                 <option value="admin">Admin</option>
             </select>
-            <button type="submit" class="w-full p-3 bg-blue-600 text-white font-bold rounded">Create User</button>
+            <button type="submit" class="w-full p-3 bg-blue-600 text-white font-bold rounded">Create New User</button>
         </form>
     </div>
 
