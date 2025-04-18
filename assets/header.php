@@ -12,7 +12,7 @@
     <!-- Navbar -->
     <nav class="bg-white shadow-md py-4">
         <div class="container mx-auto flex justify-between items-center">
-            <a href="/home" class="text-2xl font-bold text-blue-600">Perpustakaan App</a>
+            <a href="/home" class="text-2xl font-bold text-blue-600">Library</a>
             <ul class="flex space-x-6">
                 <li><a href="/home" class="hover:text-blue-600">Home</a></li>
 
